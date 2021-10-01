@@ -1,0 +1,26 @@
+---
+## This playbook lists yum updates
+
+- name: List Updates
+  hosts: all
+  gather_facts: yes
+  become: yes
+  become_method: sudo
+  vars_files: vars/ansible_vars.yml #private variables in a vault file
+
+  tasks:
+    - name: Check for yum updates
+      yum:
+         list: updates
+      register: yum_output
+
+    - name: Send update counts to Rocket Chat webhook
+      rocketchat:
+       token: #get this from Rocket Chat or  store it in your vault as a variable
+       domain: #rocket chat server
+       msg: "{{ inventory_hostname }} running {{ ansible_distribution }} version {{ ansible_distribution_version }} has {{ yum_output.results | list | length }} update(s)!"
+       color: normal
+       username: ''
+       icon_url: ''
+       protocol: 'https'
+      when: yum_output.results | list | length > 0
