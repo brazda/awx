@@ -1,7 +1,7 @@
 ---
 - name: update the system
     yum:
-      name: "*"
+      name: '*'
       state: latest
       
 - name: restart system to reboot to newest kernel
