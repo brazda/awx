@@ -1,5 +1,4 @@
----
-- name: update the system
+- name: update yum packages
   yum:
-    name: '*'
-    state: latest
+     name: '*'
+     state: latest
