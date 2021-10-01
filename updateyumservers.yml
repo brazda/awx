@@ -1,4 +1,11 @@
 ---
+- name: Updates
+  hosts: all
+  gather_facts: yes
+  become: yes
+  become_method: sudo
+  vars_files: vars/ansible_vars.yml #private variables in a vault file
+  
   tasks:
    - name: install updates
      yum: name=* state=latest update_cache=yes
