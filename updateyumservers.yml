@@ -1,5 +1,4 @@
 ---
-- name: update packages
-    yum:
-        name: '*'
-        state: latest
+  tasks:
+   - name: install updates
+     yum: name=* state=latest update_cache=yes
