@@ -1,5 +1,5 @@
 ---
-  - name: update the system
+- name: update the system
     yum:
       name: "*"
       state: latest
@@ -8,18 +8,18 @@
     async: 1
     poll: 0
 
-  - name: wait for 10 seconds
+- name: wait for 10 seconds
     pause:
       seconds: 10
 
-  - name: wait for the system to reboot
+- name: wait for the system to reboot
     wait_for_connection:
       connect_timeout: 20
       sleep: 5
       delay: 5
       timeout: 60
 
-  - name: install epel-release
+- name: install epel-release
     yum:
       name: epel-release
       state: latest      
