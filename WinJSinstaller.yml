@@ -1,3 +1,6 @@
+- name: Upgrade all packages to the latest version
+  hosts: all
+  
 - name: Install Java
   ansible.windows.win_package:
     path: http://10.5.1.100/ISO/Software/java/jre-8u301-windows-i586.exe
