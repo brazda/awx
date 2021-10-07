@@ -1,0 +1,33 @@
+- name: Install Java
+  ansible.windows.win_package:
+    path: http://10.5.1.100/ISO/Software/java/jre-8u301-windows-i586.exe
+    state: present
+ 
+ - name: Install Kitty
+  ansible.windows.win_package:
+    path: http://10.5.1.100/ISO/Software/kitty/kitty-0.74.4.13.exe
+    state: present
+ 
+ - name: Install mRemote
+  ansible.windows.win_package:
+    path: http://10.5.1.100/ISO/Software/mRemote/mRemoteNG-Installer-1.77.1.27654.msi
+    state: present
+
+ - name: Install Wireshark
+  ansible.windows.win_package:
+    path: http://10.5.1.100/ISO/Software/Wireshark/Wireshark-win64-3.4.9.exe
+    state: present
+    
+ - name: Install MobaXterm
+  ansible.windows.win_package:
+    path: http://10.5.1.100/ISO/Software/MobaXterm/MobaXterm_installer_21.3.msi
+    state: present
+        
+ - name: Install Notepad plus plus
+  ansible.windows.win_package:
+    path: http://10.5.1.100/ISO/Software/notepad++/npp.8.1.5.Installer.x64.exe
+    state: present
+ - name: Install WinSCP
+  ansible.windows.win_package:
+    path: http://10.5.1.100/ISO/Software/winscp/WinSCP-5.19.2-Setup.exe
+    state: present
