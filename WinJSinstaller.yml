@@ -20,9 +20,6 @@
       win_chocolatey:
         name: firefox
         state: present
-
-    - name: Upgrade all packages to the latest version
-      hosts: all
   
     - name: Install Java
       ansible.windows.win_package:
